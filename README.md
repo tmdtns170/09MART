@@ -45,12 +45,27 @@
 - HTML
 - CSS
 - JavaScript
+- Jsp
 
-### 📊 Library & Tool
-- Chart.js
+### 🧩 Template / Framework
+- Thymeleaf
+- Bootstrap
+
+### 🔗 External API
+- Kakao API
+- Daum API
+  
+### 📊 Library
+- MyBatis
 - jQuery
+- AJAX
+- JSON
+- Chart.js
+
+### 🧰 Tool / IDE
 - Git
 - GitHub
+- Visual Studio Code
 
 
 ---
