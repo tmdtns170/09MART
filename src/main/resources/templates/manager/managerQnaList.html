@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>home</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="/css/headStyle.css" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/vendor.css">
+	<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		/* 링크의 기본 색상과 밑줄 제거 */
+		.custom-link {
+			text-decoration: none;
+			/* 밑줄 제거 */
+			color: inherit;
+			/* 부모 요소의 색상을 따르도록 설정 */
+		}
+	</style>
+	<style>
+		.no-underline {
+			text-decoration: none !important;
+		}
+
+		.info-list {
+			display: table-cell;
+			width: 70%;
+			padding: 24px 0;
+			border-left: 1px solid #E5E5E5;
+			text-align: center;
+		}
+
+		.info-list>ul {
+			display: contents !important;
+		}
+
+		.info-list>ul>li {
+			position: relative;
+			float: left;
+			width: 33%;
+		}
+
+
+		.mypage-area,
+		.container {
+			width: 100%;
+			/* 원하는 너비로 설정 */
+			max-width: 800px;
+			/* 최대 너비 조정 */
+			margin: 0 auto;
+			/* 중앙 정렬 */
+		}
+
+
+
+		.mypage-area>.latest-orders {
+			height: 140px;
+			padding: 30px 30px 20px 30px;
+			border: 1px solid #E5E5E5;
+			margin-bottom: 40px;
+			text-align: center;
+		}
+
+		.mypage-area>.latest-orders>ul {
+			display: contents !important;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			margin: 14px auto;
+			padding-inline-start: 0;
+			margin-block-end: 0;
+		}
+
+		.mypage-area>.latest-orders>ul>li {
+			position: relative;
+			float: left;
+			width: 20%;
+			list-style: none;
+		}
+
+		.latest-orders .order-list {
+			display: flex;
+			/* Flexbox를 사용하여 항목 배치 */
+			justify-content: space-between;
+			/* 항목 사이의 공간을 고르게 배치 */
+			padding: 0;
+			/* 기본 패딩 제거 */
+			list-style-type: none;
+			/* 기본 리스트 스타일 제거 */
+			margin: 0;
+			/* 기본 마진 제거 */
+		}
+
+		.latest-orders .order-list li {
+			flex: 1;
+			/* 각 항목이 같은 비율로 너비를 차지하게 함 */
+			text-align: center;
+			/* 텍스트 중앙 정렬 */
+			border-right: 1px solid #E5E5E5;
+			/* 각 항목 사이에 선 추가 */
+		}
+
+		.latest-orders .order-list li:last-child {
+			border-right: none;
+			/* 마지막 항목의 오른쪽 선 제거 */
+		}
+
+		.latest-orders .order-list li a {
+			font-size: 20px;
+			/* 항목 텍스트 크기 */
+			display: block;
+			/* a 태그가 전체 영역을 차지하도록 설정 */
+			text-decoration: none !important;
+			/* 밑줄 제거 */
+			line-height: 1.5;
+			/* 줄 높이 설정 */
+		}
+
+		.latest-orders .order-list li a b {
+			font-size: 32px !important;
+			/* 숫자 크기를 더 크게 설정 */
+		}
+
+
+		.mypage-area>.latest-orders>ul>li>a>b {
+			font-size: 32px;
+		}
+
+		.mypage-area>.latest-orders>ul>li {
+			position: relative;
+			float: left;
+			width: 20%;
+			list-style: none;
+			border-right: 1px solid #E5E5E5;
+			/* 각 항목 사이에 선 추가 */
+		}
+
+		.mypage-area>.latest-orders>ul>li:last-child {
+			border-right: none;
+			/* 마지막 항목의 오른쪽 선 제거 */
+		}
+	</style>
+	<style>
+		.product-image {
+			width: 100%;
+			height: 200px;
+			/* 원하는 높이로 설정 */
+			object-fit: contain;
+			/* 이미지를 비율에 맞춰 잘라냄 */
+		}
+	</style>
+</head>
+
+
+
+
+<body>
+	<div th:replace="manager/ahead :: head"></div>
+	<div class="container mt-4" style="max-width: 1000px;">
+		<h1 class="text-center">Q&A</h1>
+		<hr>
+
+		<!-- 게시글 리스트 -->
+		<div class="list-group">
+
+			<div th:each="item : ${qna}">
+				<a th:href="@{/Qna/QnaDetail/{id}(id=${item.id})}" class="list-group-item list-group-item-action"
+					style="background-color: #f8f9fa;">
+					<h5 class="mb-1" th:text="${item.qnatitle}">제목</h5>
+					<p class="mb-1" th:text="${item.qnacontents}">게시글 내용의 일부가 여기에 표시됩니다.</p>
+					<small th:text="${#temporals.format(item.qnadate, 'yyyy-MM-dd')}">날짜</small>
+					<div th:if="${item.managercontents != null}">(답변완료) </div>
+					<div th:if="${item.managercontents == null}">(답변X) </div>
+				</a>
+			</div>
+		</div>
+
+		<hr>
+
+
+	</div>
+
+
+
+
+	<div th:replace="Footer::footer"></div>
+		<script src="/js/jquery-1.11.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"></script>
+		<script src="/js/plugins.js"></script>
+		<script src="/js/script.js"></script>
+
+</body>
+
+</html>

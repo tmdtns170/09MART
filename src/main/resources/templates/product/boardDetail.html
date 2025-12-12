@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>home</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+
+	<link rel="stylesheet" href="/css/headStyle.css" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/vendor.css">
+	<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+	<style>
+		body {
+			font-family: pretendard;
+		}
+
+		#content {
+			min-width: 1100px;
+			width: 1100px;
+			margin: 0 auto;
+			margin-top: 50px;
+			margin-bottom: 100px;
+		}
+
+		#productDetail .page-body {
+			width: 1100px;
+			margin: 0 auto;
+		}
+
+		#productDetail .thumb-info .thumb-wrap {
+			float: left;
+			width: 500px;
+			text-align: center;
+		}
+
+		#productDetail .thumb-info .thumb {
+			margin: 0 auto;
+			width: 500px;
+		}
+
+		#productDetail .thumb-info .thumb img {
+			width: 100%;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		img,
+		fieldset,
+		button {
+			border: 0 none;
+		}
+
+		#productDetail .thumb-info .info {
+			float: right;
+			width: 550px;
+		}
+
+		#productDetail .thumb-info .info .tit-prd {
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight: 700;
+			font-size: 22px;
+			color: #1c1c1c;
+			font-weight: bold;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left {
+			padding: 16px 0 0;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.tb-left {
+			text-align: left;
+			font-size: 14px;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left .price_per {
+			margin-right: 4px;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left .price_per,
+		#productDetail .thumb-info .info .price_div .tb-left .price_per span {
+			font-size: 28px;
+			color: #EE8035;
+			font-weight: bold;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			table-layout: fixed;
+			word-wrap: break-word;
+			word-break: keep-all;
+			font-size: 14px;
+			color: rgb(28, 28, 28);
+			line-height: 1.25;
+		}
+
+		#productDetail .thumb-info .info .table-opt * {
+			color: #555;
+		}
+
+		#productDetail .thumb-info .info .table-opt {
+			margin-top: 20px;
+			padding: 16px 0;
+			border-top: 1px solid #f2f2f2;
+		}
+
+		#productDetail .thumb-info .info .table-opt td:nth-child(1) {
+			float: left;
+			width: 130px;
+			margin-bottom: 8px;
+			padding-top: 4px;
+			padding-bottom: 5px;
+			color: #555;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt #order {
+			float: left;
+			width: 550px;
+			margin-bottom: 8px;
+			padding-top: 4px;
+			padding-bottom: 5px;
+			color: #555;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt td:nth-child(2) {
+			float: left;
+			width: 400px;
+			margin-bottom: 8px;
+			padding-bottom: 5px;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt select {
+			width: 400px;
+			height: 32px;
+			font-size: 16px;
+		}
+
+		.MK_optAddWrap,
+		.MK_optAddWrap * {
+			margin: 0;
+			padding: 0;
+		}
+
+		.order-sec {
+			margin-top: 20px;
+			border-top: 1px solid #f2f2f2;
+		}
+
+		.order-close {
+			position: relative;
+			left: 532px;
+			top: 10px;
+			background-color: #fff;
+		}
+
+		.order-count {
+			width: 60px;
+			height: 25px;
+			line-height: 24px;
+			border: 1px solid #dfdfdf;
+			text-align: center !important;
+		}
+
+		.material-symbols-outlined {
+			font-size: 17px;
+		}
+
+		.order-btn {
+			width: 20px;
+		}
+
+		.order-div-left {
+			margin: 20px 0px;
+			float: left;
+		}
+
+		.order-div-right {
+			margin: 20px 0px;
+			float: right;
+		}
+
+		.order-div-clear {
+			clear: both;
+			padding-top: 20px;
+			border-top: 1px solid #f2f2f2;
+			display: flex;
+			justify-content: space-between;
+			font-size: 22px;
+		}
+
+		.order-btn-div {
+			padding-top: 20px;
+		}
+
+		.btn-wish {
+			float: left;
+			width: 54px;
+			box-sizing: border-box;
+			margin-right: 8px;
+			display: block;
+			height: 54px;
+			font-size: 16px;
+			color: #231f20;
+			text-align: center;
+			line-height: 45px;
+			border: 1px solid #B1B1B1;
+			background: #fff;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+		}
+
+		.btn-wish>span {
+			color: #EE8035;
+			font-family: pretendard-regular;
+			font-size: 25px;
+		}
+
+		.btn-cart {
+			float: left;
+			width: 240px;
+			box-sizing: border-box;
+			margin-right: 8px;
+			display: block;
+			height: 54px;
+			font-size: 16px;
+			color: #231f20;
+			text-align: center;
+			line-height: 54px;
+			border: 1px solid #B1B1B1;
+			background: #fff;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+		}
+
+		.btn-cart:hover {
+			background: #EE8035;
+			color: #fff;
+			border: 1px solid #EE8035;
+		}
+
+		.btn-buy {
+			display: block;
+			width: 240px;
+			float: left;
+			box-sizing: border-box;
+			height: 54px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			line-height: 54px;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+			background: #EE8035;
+		}
+
+		#productDetail .detailTab {
+			padding-top: 80px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		#productDetail .detailTab ul li {
+			margin-left: -1px;
+			float: left;
+			width: 320px;
+			height: 49px;
+			border: 1px solid #e4e4e5;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		#productDetail .thumb-info:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		#productDetail .detailTab ul li.first {
+			border-bottom: 3px solid #EE8035;
+		}
+
+		.detailTab a {
+			color: #777;
+			text-decoration: none;
+		}
+
+		.detailTab ul {
+			padding-left: 0px !important;
+		}
+
+		#productDetail .detailTab ul:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+
+
+
+		#productDetail .prd-detail {
+			object-fit: cover;
+			padding-top: 10px;
+			margin: 30px auto 0;
+			width: 860px;
+			text-align: left;
+		}
+
+		#productDetail .prd-detail img {
+			width: 100%;
+		}
+
+
+		#powerReview {
+			position: relative;
+			width: 100%;
+			min-width: 700px;
+			margin: 0 auto;
+			padding-bottom: 50px;
+			color: #444;
+			font-family: Dotum, Sans-Serif;
+			font-size: 12px;
+			line-height: 1.25;
+			text-align: left;
+		}
+
+		#powerReview .info {
+			clear: both;
+			zoom: 1;
+			overflow: hidden;
+			position: relative;
+			height: 176px;
+			padding: 15px 349px 15px 239px;
+			border: 1px solid #dadada;
+		}
+
+		#review-star {
+			font-family: pretendard;
+			font-size: 15px;
+			width: 180px;
+			height: 32px;
+			border: 1px solid #dadada;
+		}
+
+		#powerReview .write {
+			position: relative;
+			margin-top: 8px;
+			padding: 18px;
+			padding-top: 10px;
+			border: 1px solid #dadada;
+			font-family: pretendard-regular;
+			font-size: 17px;
+		}
+
+		#powerReview .write textarea {
+			margin-top: 8px;
+			width: 100%;
+			height: 120px;
+			border: 0 none;
+			background: 0 none;
+			overflow: auto;
+			outline: none;
+		}
+
+		#powerReview .write .pr-txtbox {
+			position: relative;
+		}
+
+		#powerReview .btn-r {
+			margin-top: 12px;
+			padding-top: 12px;
+			text-align: right;
+			border-top: 1px solid #dadada;
+		}
+
+		#powerReview .btn-h35 {
+			width: 200px;
+			text-align: center;
+			display: inline-block;
+			height: 35px;
+			line-height: 35px;
+			padding: 0 20px;
+			color: #fff;
+			font-size: 17px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			background: #EE8035;
+		}
+
+		.review-list-detail {
+			padding: 20px 20px 40px 20px;
+			font-size: 16px;
+			font-family: pretendard-regular;
+			border-bottom: 1px solid #dadada;
+		}
+
+		.review-detail-star {
+			margin: 14px 0;
+		}
+
+		.review-detail-content {
+			margin: 14px 0 30px 0;
+		}
+
+		.review-detail-info {
+			float: right;
+			margin: 0 11px 0 31px;
+		}
+
+		.review-detail-img {
+			width: 120px;
+			height: 120px;
+			object-fit: cover;
+		}
+
+		.review-detail-under {
+			margin: 20px 0 10px 0;
+		}
+
+		.review-comment-btn {
+			width: 60px;
+			padding: 2px 0 0 0;
+			margin-right: 20px;
+			background-color: #fff;
+			border: 1px solid #dadada;
+		}
+
+		.review-comment-btn>span {
+			color: #EE8035;
+		}
+
+		.review-like-btn {
+			border: 1px solid #dadada;
+			width: 60px;
+			height: 26px;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+			padding: 1px;
+			margin-left: 10px;
+			color: #EE8035;
+		}
+
+		.delivery-info .sub-tit {
+			display: inline-block;
+			font-weight: 600;
+			width: 90px;
+			font-size: 15px;
+		}
+
+		.delivery-info .time {
+			display: inline-block;
+			font-weight: 600;
+			font-size: 15px;
+			width: 350px;
+		}
+
+		.delivery-info .notice {
+			display: block;
+			padding-top: 20px;
+			font-size: 12px;
+			color: #b0b0b0 !important;
+		}
+
+		.review-del-btn {
+			border: 1px solid #DADADA;
+			float: right;
+			transform: translate(-10px, -40px);
+			padding: 2px 15px 2px 15px;
+		}
+
+		.review-reply-btn {
+			border: 1px solid #DADADA;
+			float: right;
+			transform: translate(-10px, 5px);
+			padding: 2px 15px 2px 15px;
+		}
+
+		.review-comment-del {
+			background-color: white;
+		}
+
+		.review_reply {
+			min-height: 100px;
+		}
+
+		.btn-cart.default {
+			color: gray;
+			/* 기본 하트 색깔 */
+		}
+
+		.btn-cart.active {
+			color: #EE8035;
+			;
+			/* 활성화된 하트 색깔 */
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<th:block th:if="${session.loginId != null}">
+		<div th:replace="mhead :: head">
+		</div>
+	</th:block>
+	<th:block th:if="${session.loginSid != null}">
+		<div th:replace="seller/shead::head">
+
+		</div>
+	</th:block>
+	<th:block th:if="${session.loginFid == null}">
+		<div th:replace="mhead::head"></div>
+	</th:block>
+
+
+
+
+
+
+	<section class="container">
+		<!-- <h1>시작 페이지<small>없음</small></h1> -->
+	</section>
+
+
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="principal" />
+	</sec:authorize>
+
+	<div id="content">
+		<div id="productDetail">
+			<div class="page-body">
+
+				<div class="thumb-info">
+					<div class="thumb-wrap">
+						<div class="thumb">
+							<img th:src="${product.mainFile}" class="img-fluid" alt="상품이미지">
+							<input type="hidden" name="pic" value="${ldto.pic}">
+							<input type="hidden" name="content" value="${ldto.content}">
+						</div>
+					</div> <!-- thumb-wrap -->
+
+					<!--  주문 form ajax list로	-->
+					<div class="info">
+						<h3 class="tit-prd">[[${product.ptitle}]] </h3>
+
+						<div class="price_div">
+							<div class="price sell_price">
+								<div class="tb-left">
+
+
+									<span class="price_won">[[${product.product.sprice}]]원</span>
+									<div class="d-none" id="pmoney">[[${product.product.sprice}]]</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="table-opt">
+							<table>
+								<tbody>
+
+									<tr>
+										<td
+											style="background-color: #F8F8F8; width:100%; padding:20px; margin-top: 10px">
+											<div class="delivery-info">
+												<div class="desc daily p-2  " style="display: flex; font-weight: 600; ">
+													<div>남은 재고 : [[${total}]]개</div>
+
+												</div>
+												<div class="desc dawn p-2" style="display: flex; font-weight: 600;">
+													<div>배송시작일 : [[${product.product.sdate}]]</div>
+
+												</div>
+												<div class="desc final p-2" style="display: flex; font-weight: 600;">
+													<div>주문마감일 : [[${product.product.fdate}]]</div>
+
+												</div>
+
+											</div>
+										</td>
+									</tr>
+
+
+									<tr>
+										<td colspan="2" id="order"
+											th:if="${session.loginFid == null || session.loginId != null}">
+
+											<div class="order-sec MK_optAddWrap">
+												<br>
+												<div class="my-2" style="text-align:left;">[ 수량선택 ]</div>
+
+
+												<div class="d-flex align-items-center justify-content-between">
+													<div class="input-group product-qty" style="width: 10%;">
+														<span class="input-group-btn">
+															<button type="button"
+																class="quantity-left-minus btn btn-danger btn-number"
+																data-type="minus" onclick="changeQuantity(-1)"
+																style="background-color:white; border-color: black;">
+																<svg width="16" height="16">
+																	<use xlink:href="#minus"></use>
+																</svg>
+															</button>
+														</span>
+														<input type="text" id="quantity" name="quantity"
+															class="form-control input-number" value="1"
+															style="text-align: center;">
+														<span class="input-group-btn">
+															<button type="button"
+																class="quantity-right-plus btn btn-success btn-number"
+																data-type="plus" onclick="changeQuantity(1)"
+																style="background-color:white; border-color: black;">
+																<svg width="16" height="16">
+																	<use xlink:href="#plus"></use>
+																</svg>
+															</button>
+														</span>
+													</div>
+
+												</div>
+
+												<!--이건 클래스 -->
+												<div class="order-div-right">
+													[[${product.product.sprice}]]원
+												</div>
+											</div>
+
+
+											<div class="order-div-clear">
+												<span>총 상품금액</span>
+
+												<div style="float:right;">
+													<!--이건 id -->
+													<span id="total_price"></span>
+												</div>
+											</div>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div> <!-- .table-opt -->
+
+						<!-- 찜, 장바구니, 구매하기 버튼 -->
+						<div class="order-btn-div mx-4" th:if="${session.loginFid == null || session.loginId != null}">
+
+							<button class="btn-cart default" type="button" th:if="${isBookmark == null}"
+								th:onclick="addWishList('[[${product.id}]]');">♡장바구니</button>
+							<button class="btn-cart active" type="button" th:if="${isBookmark != null}"
+								th:onclick="removeWishList('[[${isBookmark.id}]]');">♥장바구니</button>
+							<form action="/order/order" method="post" onsubmit="return formCheck(this)">
+								<input type="hidden" name="bea" id="pbea" value="1">
+								<input type="hidden" name="boardId" id="pbea" th:value="${product.id}">
+								<input type="hidden" name="productId" id="pbea" th:value="${product.product.id}">
+								<input type="hidden" name="total" id="total" th:value="${total}">
+
+								<button class="btn-buy" type="submit">구매하기</button>
+							</form>
+							<input type="hidden" id="storename" name="storename" value="">
+							<input type="hidden" id="sellboardseq" name="sellboardseq" value="${ldto.sellboardseq}">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+						</div>
+					</div>
+				</div> <!-- thumb-info 결제 칸까지 -->
+
+				<!-- 도시락탭 -->
+				<a id="detailGoodsInfo"></a>
+				<div class="detailTab">
+					<ul>
+						<li class="first"><a href="detailGoodsInfo" class="active">상품설명</a></li>
+						<li><a href="#detailReview">리뷰</a></li>
+						<li onclick="drch()"><a href="#detailRelation">배송/교환/반품</a></li>
+
+					</ul>
+				</div>
+
+				<!-- 디테일 -->
+				<div class="prd-detail">
+
+					<img th:each="item : ${#strings.listSplit(product.pfilename,',')}" th:src="${item}" alt="상품 상세 정보">
+					<p th:text="${product.pcontents}">게시글 </p>
+
+				</div>
+
+				<!-- 댓글탭 -->
+				<a id="detailReview"></a>
+				<div class="detailTab">
+					<ul>
+						<li><a href="#detailGoodsInfo">상품설명</a></li>
+						<li class="first"><a href="#detailReview" class="active" id="drrv">리뷰</a></li>
+						<li onclick="drch()"><a href="#detailRelation">배송/교환/반품</a></li>
+					</ul>
+				</div>
+
+				<!-- 댓글 -->
+				<div style="width: 960px; margin: 0 auto;">
+					<div id="powerReview">
+
+
+						<div class="review-list" id="reviewListBox">
+							<!-- 반복문 돌리는 부분 -->
+							<div class="border d-flex p-2 py-3 rounded mb-2 reviewItem" style="flex-wrap: wrap;"
+								th:each="reply : ${replyList}">
+
+								<div class="mb-2 px-3" style="width: 200px; min-height: 60px;">
+									<h6 class="mb-0 fw-bold" th:text="${reply.member.mid}">test01</h6>
+									<small class="text-body-secondary"
+										th:text="${#temporals.format(reply.redate, 'yyyy-MM-dd HH:mm:ss')}">2024-10-02
+										13:09:17</small>
+
+								</div>
+								<div th:text="${reply.recontents}">
+									ㅡㅋ크크ㅡ 넷마블
+								</div>
+
+
+
+								<div class="flex-shrink-0 w-100">
+									<!--답글등록-->
+									<div th:if="${#arrays.length(reply.sellerReplys) > 0}"
+										onclick="sellerReplyView(this)" style="cursor: pointer; margin-left: 21%;"
+										class="mb-2">
+										답글보기
+									</div>
+									<div class="d-none">
+										<div class="ms-4 border p-2 py-3 rounded mb-2"
+											th:each="srList, srStat : ${reply.sellerReplys}">
+											<div class="mb-2 px-3" style="width: 200px; min-height: 60px;">
+												<h6 class="mb-0 fw-bold">판매자</h6>
+												<small class="text-body-secondary"
+													th:text="${#temporals.format(srList.sredate, 'yyyy-MM-dd HH:mm:ss')}">2024-10-02
+													13:09:17</small>
+												<div th:text="${srList.srecontents}" class="my-4">
+													ㅡㅋ크크ㅡ 넷마블
+												</div>
+											</div>
+
+										</div>
+
+
+									</div>
+									<div style="cursor: pointer;"
+										th:if="${session.loginSid == product.product.seller.sid }">
+										<div>
+											<form id="sReply" class="" action="/sellerReply/write" method="post">
+												<input type="hidden" name="rep_id" th:value="${reply.id}">
+												<input type="hidden" name="product_id" th:value="${product.id}">
+												<textarea class="form-control" id="review_reply_content"
+													name="srecontents" placeholder="답글  작성"></textarea>
+												<div class="review-reply-btn">
+													<button class="review-comment-del">
+														<span class="material-symbols-outlined">답글등록</span>
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+
+								</div>
+
+
+							</div>
+
+
+							<!-- .review-list -->
+							<!-- 댓글쓰기 -->
+
+
+						</div> <!-- .powerReview -->
+						<!-- 페이징 넘버-->
+						<nav aria-label="Page navigation example">
+							<ul class="pagination" id="paginations">
+
+							</ul>
+						</nav>
+
+						<!-- 페이징 넘버-->
+						<div class="write" th:if="${session.loginId != null}">
+
+							<form action="/product/replyWrite" method="post">
+								<input type="hidden" name="product_id" th:value="${product.id}">
+								<textarea id="review_content" name="recontents" placeholder="댓글 작성"></textarea>
+
+								<div class="btn-r">
+									<button id="register_review" type="submit" class="btn-h35">댓글등록</button>
+								</div>
+							</form>
+						</div>
+					</div> <!-- 댓글 -->
+
+				</div>
+
+				<div class="detailTab">
+					<ul>
+						<li><a href="#detailGoodsInfo">상품설명</a></li>
+						<li onclick="drrv()"><a href="#detailReview">리뷰</a></li>
+						<li class="first"><a href="#detailRelation" class="active" id="drch2">배송/교환/반품</a></li>
+
+					</ul>
+				</div>
+				<div>
+					<img src="/images/drch.png">
+				</div>
+			</div> <!-- .page-body -->
+		</div> <!-- #productDetail -->
+	</div> <!-- #content -->
+
+
+	<div th:replace="Footer::footer"></div>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+	<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+	<script src="/js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/script.js"></script>
+
+	<script>
+
+		const beaElement = document.getElementById('pbea'); // 수량 hidden input
+		const pmoneyElement = document.getElementById('pmoney'); // 가격 div
+		const pmoney = parseInt(pmoneyElement.innerText || pmoneyElement.textContent); // 가격을 정수로 변환
+
+		// 초기 수량 가져오기
+		let bea = parseInt(beaElement.value); // 수량을 정수로 변환
+		// 초기 가격 계산
+		document.getElementById('total_price').innerHTML = (bea * pmoney) + '원';
+
+		function changeQuantity(amount) {
+			console.log(amount);
+
+			// 수량 변경
+			if (amount === 1) {
+				bea += 1; // 수량 증가
+			} else if (amount === -1 && bea > 1) { // 최소 수량 1로 제한
+				bea -= 1; // 수량 감소
+			}
+
+			// 업데이트
+			beaElement.value = bea; // hidden input 업데이트
+			document.getElementById('total_price').innerHTML = (bea * pmoney) + '원'; // 가격 업데이트
+
+			console.log('수량: ' + bea);
+		}
+		function formCheck(obj) {
+			let bea = obj.bea;
+			let total = obj.total;
+			let beaValue = parseInt(bea.value);
+			let totalValue = parseInt(total.value);
+			console.log('bea : ' + beaValue);
+			console.log('total : ' + totalValue);
+			if (beaValue > totalValue) {
+				alert('수량을 다시 입력해주세요');
+				bea.focus();
+				return false;
+			}
+
+		}
+
+
+
+		function sellerReplyWrite(clickObj) {
+
+			clickObj.nextElementSibling.classList.toggle('d-none');
+
+		}
+		function sellerReplyView(clickObj) {
+
+			clickObj.nextElementSibling.classList.toggle('d-none');
+
+			if (clickObj.innerHTML == '답글닫기') {
+				clickObj.innerHTML = '';
+				clickObj.innerHTML = '답글보기';
+			} else {
+				clickObj.innerHTML = '';
+				clickObj.innerHTML = '답글닫기';
+			}
+
+
+		}
+		function addWishList(boardId) {
+			$.ajax({
+				url: '/BookMark/addWish',
+				type: 'get',
+				data: {'boardId': boardId},
+				success: function (response) {
+					console.log(response);
+					location.reload();
+
+				}, error: function () {
+					alert('!!!!')
+				}
+
+
+
+			});
+		}
+
+	</script>
+
+	<script>
+		const reviewItems = []; // 댓글 목록
+		const viewCount = 4; // 페이지당 출력할 댓글 수
+
+		let nowPage = 1; // 현재 페이지 번호
+
+		window.onload = function () {
+			getReviewList(); // 댓글 수집
+			genPagination(); // 페이지 번호 생성
+			genReview(nowPage); // 현재 페이지 번호에 대한 댓글 생성
+		};
+
+		function genReview(pnum) {
+			const reviewListBox = document.getElementById('reviewListBox');
+			reviewListBox.innerHTML = ``;
+			// 각 pnum에 따른 시작 인덱스 계산
+			const startIndex = (pnum - 1) * 4; // pnum이 1이면 0, 2면 4, 3이면 8 등
+			const endIndex = startIndex + 3; // 3개의 리뷰를 가져옴 (0~3, 4~7 등)
+
+			// 해당 범위의 리뷰 가져오기
+			const selectedReviews = reviewItems.slice(startIndex, endIndex + 1);
+			// 결과 출력
+			console.log("선택된 리뷰:", selectedReviews);
+			for (let rvItem of selectedReviews) {
+				reviewListBox.appendChild(rvItem)
+			}
+		}
+
+		function getReviewList() {
+			const reviewElments = document.querySelectorAll('.reviewItem');
+			for (let reEl of reviewElments) {
+				let cloneReview = reEl.cloneNode(true);
+				reviewItems.push(cloneReview);
+				reEl.remove();
+			}
+		}
+
+
+		function genPagination() {
+			console.log('실행');
+			const totalReviews = reviewItems.length; // 전체 댓글 수
+			const pageNumbers = Math.ceil(totalReviews / viewCount); // 페이지 번호 수
+			const paginations = document.getElementById('paginations');
+			let prevLi = document.createElement('li');
+			prevLi.classList.add('page-item');
+			prevLi.innerHTML = `<button class="page-link" onclick='prevPageNumber()' aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</button>`;
+
+			paginations.appendChild(prevLi); //  이전 페이지 버튼 추가	
+
+			// 페이지 번호  추가
+			for (let pageNum = 1; pageNum <= pageNumbers; pageNum++) {
+				let numberLi = document.createElement('li');
+				numberLi.classList.add('page-item');
+				numberLi.innerHTML = `<button class="page-link" onclick='selectPageNumber(${pageNum})'>${pageNum}</button>`;
+				paginations.appendChild(numberLi)
+			}
+
+			// 다음 페이지 버튼 추가				
+			let nextLi = document.createElement('li');
+			nextLi.classList.add('page-item');
+			nextLi.innerHTML = `<button class="page-link" onclick='nextPageNumber()' aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</button>`;
+
+			paginations.appendChild(nextLi); //  이전 페이지 버튼 추가									
+
+
+		}
+
+		function selectPageNumber(clickNumber) {
+			console.log('선택한 페이지 번호 : ' + clickNumber)
+			nowPage = clickNumber;
+			genReview(nowPage);
+		}
+		function nextPageNumber() {
+			const totalReviews = reviewItems.length; // 전체 댓글 수
+			const pageNumbers = Math.ceil(totalReviews / viewCount); // 페이지 번호 수
+			if (nowPage < pageNumbers) {
+				nowPage += 1;
+				genReview(nowPage);
+			} else {
+				alert('마지막 페이지 입니다.')
+			}
+
+		}
+		function prevPageNumber() {
+			if (nowPage > 1) {
+				nowPage -= 1;
+				genReview(nowPage);
+			} else {
+				alert('첫페이지 입니다.')
+			}
+		}
+
+		function drch() {
+			<!--drch2-->
+			document.getElementById('drch2').focus();
+		}
+		function drrv() {
+			document.getElementById('drrv').focus();
+		}
+
+	</script>
+</body>
+
+</html>

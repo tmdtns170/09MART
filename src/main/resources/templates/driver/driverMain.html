@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>home</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+
+	<link rel="stylesheet" href="/css/headStyle.css" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/vendor.css">
+	<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+	<link href="/css/chat.css" rel="stylesheet">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+	<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<link href="https://getbootstrap.com/docs/5.3/examples/sidebars/sidebars.css" rel="stylesheet">
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fa848f9ead0400ce578dff3cbfaf6e0"></script>
+	
+	
+
+	<style>
+		body {
+			font-family: pretendard;
+		}
+
+		#content {
+			min-width: 1100px;
+			width: 1100px;
+			margin: 0 auto;
+			margin-top: 50px;
+			margin-bottom: 100px;
+		}
+
+		#productDetail .page-body {
+			width: 1100px;
+			margin: 0 auto;
+		}
+
+		#productDetail .thumb-info .thumb-wrap {
+			float: left;
+			width: 500px;
+			text-align: center;
+		}
+
+		#productDetail .thumb-info .thumb {
+			margin: 0 auto;
+			width: 500px;
+		}
+
+		#productDetail .thumb-info .thumb img {
+			width: 100%;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		img,
+		fieldset,
+		button {
+			border: 0 none;
+		}
+
+		#productDetail .thumb-info .info {
+			float: right;
+			width: 550px;
+		}
+
+		#productDetail .thumb-info .info .tit-prd {
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight: 700;
+			font-size: 22px;
+			color: #1c1c1c;
+			font-weight: bold;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left {
+			padding: 16px 0 0;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.tb-left {
+			text-align: left;
+			font-size: 14px;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left .price_per {
+			margin-right: 4px;
+		}
+
+		#productDetail .thumb-info .info .price_div .tb-left .price_per,
+		#productDetail .thumb-info .info .price_div .tb-left .price_per span {
+			font-size: 28px;
+			color: #EE8035;
+			font-weight: bold;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			table-layout: fixed;
+			word-wrap: break-word;
+			word-break: keep-all;
+			font-size: 14px;
+			color: rgb(28, 28, 28);
+			line-height: 1.25;
+		}
+
+		#productDetail .thumb-info .info .table-opt * {
+			color: #555;
+		}
+
+		#productDetail .thumb-info .info .table-opt {
+			margin-top: 20px;
+			padding: 16px 0;
+			border-top: 1px solid #f2f2f2;
+		}
+
+		#productDetail .thumb-info .info .table-opt td:nth-child(1) {
+			float: left;
+			width: 130px;
+			margin-bottom: 8px;
+			padding-top: 4px;
+			padding-bottom: 5px;
+			color: #555;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt #order {
+			float: left;
+			width: 550px;
+			margin-bottom: 8px;
+			padding-top: 4px;
+			padding-bottom: 5px;
+			color: #555;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt td:nth-child(2) {
+			float: left;
+			width: 400px;
+			margin-bottom: 8px;
+			padding-bottom: 5px;
+			font-size: 16px;
+		}
+
+		#productDetail .thumb-info .info .table-opt select {
+			width: 400px;
+			height: 32px;
+			font-size: 16px;
+		}
+
+		.MK_optAddWrap,
+		.MK_optAddWrap * {
+			margin: 0;
+			padding: 0;
+		}
+
+		.order-sec {
+			margin-top: 20px;
+			border-top: 1px solid #f2f2f2;
+		}
+
+		.order-close {
+			position: relative;
+			left: 532px;
+			top: 10px;
+			background-color: #fff;
+		}
+
+		.order-count {
+			width: 60px;
+			height: 25px;
+			line-height: 24px;
+			border: 1px solid #dfdfdf;
+			text-align: center !important;
+		}
+
+		.material-symbols-outlined {
+			font-size: 17px;
+		}
+
+		.order-btn {
+			width: 20px;
+		}
+
+		.order-div-left {
+			margin: 20px 0px;
+			float: left;
+		}
+
+		.order-div-right {
+			margin: 20px 0px;
+			float: right;
+		}
+
+		.order-div-clear {
+			clear: both;
+			padding-top: 20px;
+			border-top: 1px solid #f2f2f2;
+			display: flex;
+			justify-content: space-between;
+			font-size: 22px;
+		}
+
+		.order-btn-div {
+			padding-top: 20px;
+		}
+
+		.btn-wish {
+			float: left;
+			width: 54px;
+			box-sizing: border-box;
+			margin-right: 8px;
+			display: block;
+			height: 54px;
+			font-size: 16px;
+			color: #231f20;
+			text-align: center;
+			line-height: 45px;
+			border: 1px solid #B1B1B1;
+			background: #fff;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+		}
+
+		.btn-wish>span {
+			color: #EE8035;
+			font-family: pretendard-regular;
+			font-size: 25px;
+		}
+
+		.btn-cart {
+			float: left;
+			width: 240px;
+			box-sizing: border-box;
+			margin-right: 8px;
+			display: block;
+			height: 54px;
+			font-size: 16px;
+			color: #231f20;
+			text-align: center;
+			line-height: 54px;
+			border: 1px solid #B1B1B1;
+			background: #fff;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+		}
+
+		.btn-cart:hover {
+			background: #EE8035;
+			color: #fff;
+			border: 1px solid #EE8035;
+		}
+
+		.btn-buy {
+			display: block;
+			width: 240px;
+			float: left;
+			box-sizing: border-box;
+			height: 54px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			line-height: 54px;
+			-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+			border-radius: 5px;
+			background: #EE8035;
+		}
+
+		#productDetail .detailTab {
+			padding-top: 80px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		#productDetail .detailTab ul li {
+			margin-left: -1px;
+			float: left;
+			width: 320px;
+			height: 49px;
+			border: 1px solid #e4e4e5;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		#productDetail .thumb-info:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		#productDetail .detailTab ul li.first {
+			border-bottom: 3px solid #EE8035;
+		}
+
+		.detailTab a {
+			color: #777;
+			text-decoration: none;
+		}
+
+		.detailTab ul {
+			padding-left: 0px !important;
+		}
+
+		#productDetail .detailTab ul:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+
+
+
+		#productDetail .prd-detail {
+			object-fit: cover;
+			padding-top: 10px;
+			margin: 30px auto 0;
+			width: 860px;
+			text-align: left;
+		}
+
+		#productDetail .prd-detail img {
+			width: 100%;
+		}
+
+
+		#powerReview {
+			position: relative;
+			width: 100%;
+			min-width: 700px;
+			margin: 0 auto;
+			padding-bottom: 50px;
+			color: #444;
+			font-family: Dotum, Sans-Serif;
+			font-size: 12px;
+			line-height: 1.25;
+			text-align: left;
+		}
+
+		#powerReview .info {
+			clear: both;
+			zoom: 1;
+			overflow: hidden;
+			position: relative;
+			height: 176px;
+			padding: 15px 349px 15px 239px;
+			border: 1px solid #dadada;
+		}
+
+		#review-star {
+			font-family: pretendard;
+			font-size: 15px;
+			width: 180px;
+			height: 32px;
+			border: 1px solid #dadada;
+		}
+
+		#powerReview .write {
+			position: relative;
+			margin-top: 8px;
+			padding: 18px;
+			padding-top: 10px;
+			border: 1px solid #dadada;
+			font-family: pretendard-regular;
+			font-size: 17px;
+		}
+
+		#powerReview .write textarea {
+			margin-top: 8px;
+			width: 100%;
+			height: 120px;
+			border: 0 none;
+			background: 0 none;
+			overflow: auto;
+			outline: none;
+		}
+
+		#powerReview .write .pr-txtbox {
+			position: relative;
+		}
+
+		#powerReview .btn-r {
+			margin-top: 12px;
+			padding-top: 12px;
+			text-align: right;
+			border-top: 1px solid #dadada;
+		}
+
+		#powerReview .btn-h35 {
+			width: 200px;
+			text-align: center;
+			display: inline-block;
+			height: 35px;
+			line-height: 35px;
+			padding: 0 20px;
+			color: #fff;
+			font-size: 17px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			background: #EE8035;
+		}
+
+		.review-list-detail {
+			padding: 20px 20px 40px 20px;
+			font-size: 16px;
+			font-family: pretendard-regular;
+			border-bottom: 1px solid #dadada;
+		}
+
+		.review-detail-star {
+			margin: 14px 0;
+		}
+
+		.review-detail-content {
+			margin: 14px 0 30px 0;
+		}
+
+		.review-detail-info {
+			float: right;
+			margin: 0 11px 0 31px;
+		}
+
+		.review-detail-img {
+			width: 120px;
+			height: 120px;
+			object-fit: cover;
+		}
+
+		.review-detail-under {
+			margin: 20px 0 10px 0;
+		}
+
+		.review-comment-btn {
+			width: 60px;
+			padding: 2px 0 0 0;
+			margin-right: 20px;
+			background-color: #fff;
+			border: 1px solid #dadada;
+		}
+
+		.review-comment-btn>span {
+			color: #EE8035;
+		}
+
+		.review-like-btn {
+			border: 1px solid #dadada;
+			width: 60px;
+			height: 26px;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+			padding: 1px;
+			margin-left: 10px;
+			color: #EE8035;
+		}
+
+		.delivery-info .sub-tit {
+			display: inline-block;
+			font-weight: 600;
+			width: 90px;
+			font-size: 15px;
+		}
+
+		.delivery-info .time {
+			display: inline-block;
+			font-weight: 600;
+			font-size: 15px;
+			width: 350px;
+		}
+
+		.delivery-info .notice {
+			display: block;
+			padding-top: 20px;
+			font-size: 12px;
+			color: #b0b0b0 !important;
+		}
+
+		.review-del-btn {
+			border: 1px solid #DADADA;
+			float: right;
+			transform: translate(-10px, -40px);
+			padding: 2px 15px 2px 15px;
+		}
+
+		.review-reply-btn {
+			border: 1px solid #DADADA;
+			float: right;
+			transform: translate(-10px, 5px);
+			padding: 2px 15px 2px 15px;
+		}
+
+		.review-comment-del {
+			background-color: white;
+		}
+
+		.review_reply {
+			min-height: 100px;
+		}
+
+		.btn-cart.default {
+			color: gray;
+			/* 기본 하트 색깔 */
+		}
+
+		.btn-cart.active {
+			color: #EE8035;
+			;
+			/* 활성화된 하트 색깔 */
+		}
+	</style>
+</head>
+
+<body>
+	<div th:replace="driver/dhead :: head"></div>
+	
+
+	<hr />
+
+
+	<h2 class="pb-2 border-bottom">[[${driverRoute[0].drid}]] 기사님</h2>
+
+
+	<hr />
+
+	<main class="d-flex flex-nowrap">
+		<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+			<a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+				<svg class="bi pe-none me-2" width="40" height="32">
+					<use xlink:href="#bootstrap"></use>
+				</svg>
+				<span class="fs-4">기사일정</span>
+			</a>
+			<hr>
+			<ul class="nav nav-pills flex-column mb-auto">
+				<li th:each="route : ${driverRoute}" class="nav-item mb-2">
+					<a th:attr="href='javascript:getRoute(' + ${route.id} + ')' " class="nav-link active"
+						aria-current="page">
+						<svg class="bi pe-none me-2" width="16" height="16">
+							<use xlink:href="#home"></use>
+						</svg>[[${route.rtdate}]]</a>
+				</li>
+
+			</ul>
+
+		</div>
+		<!--사이드바-->
+		<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary border border-r-1"
+			style="width: 380px;">
+			<div class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#4ae39c" viewBox="0 0 256 256"
+					class="me-2">
+					<path d="M232,128A104,104,0,1,1,128,24,104.13,104.13,0,0,1,232,128Z"></path>
+				</svg>
+				<span class="fs-5 fw-semibold" id="routedate">경로 최적화 결과</span>
+			</div>
+			<div class="d-flex flex-wrap py-3 px-2 gap-3 align-items-center justify-content-center border-bottom">
+				<div class="d-flex flex-column align-items-center">
+					<div id="totalVisit">0곳</div>
+					<div class="fw-light" style="font-size:.75rem">경유지</div>
+				</div>
+				<div class="border-start border-2 h-50"></div>
+				<div class="d-flex flex-column align-items-center">
+					<div id="totalDistance">0km</div>
+					<div class="fw-light" style="font-size:.75rem">이동거리</div>
+				</div>
+				<div class="border-start border-2 h-50"></div>
+				<div class="d-flex flex-column align-items-center">
+					<div id="totalDuration">0분</div>
+					<div class="fw-light" style="font-size:.75rem">이동시간</div>
+				</div>
+			</div>
+			<div class="list-group scrollarea px-3 flex-grow-1" id="nodeList">
+			</div>
+
+		</div>
+		<div id="map" class="w-100" style="min-height: 700px;;"></div>
+
+	</main>
+	<div th:replace="Footer::footer"></div>
+	<script src="/js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/script.js"></script>
+
+	
+
+	<script>
+
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				center: new kakao.maps.LatLng(37.4388938204128, 126.675113024566), // 지도의 중심좌표(인천일보아카데미)
+				level: 3 // 지도의 확대 레벨
+			};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		function getRoute(res) {
+			$.ajax({
+				url: '/drivers/driverdate',
+				type: 'get',
+				data: {'id': res},
+				dataType: 'json',
+				success: function (response) {
+
+					document.getElementById('routedate').innerText = response.rtdate;
+					console.log("성공")
+					console.log(response);
+					displayData(response);
+				}
+
+
+
+			})
+
+		}
+
+
+
+
+		// ajax 응답 받은 데이터로 화면에 그리기.
+		const NODE_MAP = {};
+		const MARKER_MAP = {};
+		const INFO_MAP = {};
+		function displayData(data) {
+			clearNode();
+			const totalDistance = data.distance;// 전체이동거리(미터)
+			const totalDuration = data.duration;// 전체이동시간(초)
+			const totalPathPointList = JSON.parse(data.pathlist);// // 전체이동경로
+			const nodeList = JSON.parse(data.nodelist);// // 방문지목록
+			const ProductBySellernodelist = JSON.parse(data.productBySellernodelist);// // 중복된 방문지목록 'nodeid' : [{ id:'1', 'productName' : '인성'  },{ id:'1', 'productName' : '인성'  }]
+			const ProductByMembernodelist = JSON.parse(data.productByMembernodelist);// // 중복된 방문지목록
+			console.log("duplicatenodelist")
+			console.log(ProductBySellernodelist);
+			console.log(ProductByMembernodelist);
+			console.log(nodeList)
+			const nodeListDIV = document.getElementById('nodeList');
+			nodeListDIV.innerHTML = ``;
+
+			$("#totalVisit").text((nodeList.length - 1) + "곳");
+			$("#totalDistance").text((totalDistance / 1000).toFixed(2) + "km");
+			$("#totalDuration").text(secondsToHoursMinutes(totalDuration));
+
+			let html_Text = '';
+			let count = 0;
+			var bounds = new kakao.maps.LatLngBounds();
+			let loopIndex = 0;
+			let pickNodeCheck = false;
+			let postNodeCheck = false;
+			for (const node of nodeList) {
+				if (loopIndex == 0) {
+					loopIndex++;
+					continue;
+				}
+				console.log("node")
+				console.log(node)
+				NODE_MAP[node.id] = node;
+
+				// nodeMain a Tag
+				let list_group_item = document.createElement('a');
+				list_group_item.setAttribute('href', `javascript:panTo(${node.id})`);
+				list_group_item.classList.add('list-group-item', 'list-group-item-action', 'py-3', 'lh-sm', 'border', 'rounded-2')
+
+				// 픽업장소이면
+				if ((node.pickup != undefined) && !pickNodeCheck) {
+					let pickUpBtn = document.createElement('div');
+					pickUpBtn.classList.add('border', 'border-primary', 'w-100', 'my-2', 'rounded', 'text-center', 'p-3', 'fw-bold');
+					pickUpBtn.innerText = '픽업장소'
+					nodeListDIV.appendChild(pickUpBtn);
+					pickNodeCheck = true;
+				}
+
+				if ((node.orderid != undefined) && !postNodeCheck) {
+					let pickUpBtn = document.createElement('div');
+					pickUpBtn.classList.add('border', 'border-success', 'w-100', 'my-2', 'rounded', 'text-center', 'p-3', 'fw-bold');
+					pickUpBtn.innerText = '배송장소'
+					nodeListDIV.appendChild(pickUpBtn);
+					postNodeCheck = true;
+				}
+
+				//nodeInfo 순번, 주소 정보
+				let nodeInfoDiv = document.createElement('div');
+				nodeInfoDiv.classList.add('d-flex', 'w-100', 'align-items-center', 'justify-content-start', 'mb-1')
+				nodeInfoDiv.classList.add()
+				nodeInfoDiv.innerHTML = `<span class="badge text-bg-secondary">${++count}</span>
+			                         <strong class="ms-1">${node.address}</strong>`;
+				list_group_item.appendChild(nodeInfoDiv);
+
+				//node 판매자(배송회원) 정보
+				let nodeInfo_detail = document.createElement('div');
+				nodeInfo_detail.classList.add('mt-3', 'small');
+				nodeInfo_detail.innerHTML = `<div class="d-flex align-items-center justify-content-between">
+			  								<div class="d-flex align-items-center">
+				    							<span class="badge text-bg-light border border-secondary-subtle me-2" >이름</span>
+				    							<span>${node.name}</span>
+			  								</div>
+										    <div class="d-flex align-items-center">
+										    	<span class="badge text-bg-light border border-secondary-subtle me-2" >전화</span >
+										    	<span>${node.phone}</span>
+										    </div>
+										  </div>`;
+
+				if (node.pickup != undefined) {
+					//픽업 장소 인 경우										  
+					let pickUpItemInfo = document.createElement('div')
+					pickUpItemInfo.classList.add('my-1');
+					let duplicatItemList = ProductBySellernodelist[node.id]
+					console.log("픽업 장소 인 경우")
+					console.log(node.id)
+					console.log(duplicatItemList)
+
+					if (duplicatItemList == undefined) { // 픽업 물품이 한개 인 경우
+						let itemDiv = document.createElement('div')
+						itemDiv.classList.add('my-1');
+						itemDiv.innerHTML = `<div class="my-1 d-flex align-items-center">
+								             <span class="badge text-bg-light border border-secondary-subtle me-2" >${node.pid}</span >
+								             <span>${node.pname}</span>
+								         </div>`;
+						nodeInfo_detail.appendChild(itemDiv);
+					} else { // 픽업 물품이 여러개인 경우
+
+						for (let item of duplicatItemList) {
+							let itemDiv = document.createElement('div')
+							itemDiv.classList.add('my-1');
+							itemDiv.innerHTML = `<div class="my-1 d-flex align-items-center">
+									             <span class="badge text-bg-light border border-secondary-subtle me-2" >${item.id}</span >
+									             <span>${item.productName}</span>
+									         </div>`;
+							nodeInfo_detail.appendChild(itemDiv);
+						}
+					}
+
+
+				} else {
+					//픽업 장소 인 경우										  
+					let pickUpItemInfo = document.createElement('div')
+					pickUpItemInfo.classList.add('my-1');
+					let duplicatItemList = ProductByMembernodelist[node.id]
+					console.log("배송 장소 인 경우")
+					console.log(node.id)
+					console.log(duplicatItemList)
+					if (duplicatItemList == undefined) { // 배송물품이 한개 인 경우
+						let itemDiv = document.createElement('div')
+						itemDiv.classList.add('my-1');
+						itemDiv.innerHTML = `<div class="my-1 d-flex align-items-center">
+								             <span class="badge text-bg-light border border-secondary-subtle me-2" >송장번호</span >
+								             <span>${node.orderid}</span>
+								         </div>`;
+						nodeInfo_detail.appendChild(itemDiv);
+						let pickUpBtn = document.createElement('button');
+						pickUpBtn.classList.add('btn', 'btn-primary', 'w-100', 'mb-2');
+						pickUpBtn.addEventListener('click', function () {
+							deliverystate(node.orderid, pickUpBtn)
+						})
+						if (node.ostate == "Y") {
+							pickUpBtn.innerText = '배송중'
+							nodeInfo_detail.appendChild(pickUpBtn);
+						}
+						else if (node.ostate == "F") {
+							pickUpBtn.innerText = '배송완료'
+							nodeInfo_detail.appendChild(pickUpBtn);
+						}
+
+					} else { // 배송 물품이 여러개 인 경우
+						for (let item of duplicatItemList) {
+							let itemDiv = document.createElement('div')
+							itemDiv.classList.add('my-1');
+							itemDiv.innerHTML = `<div class="my-1 d-flex align-items-center">
+									             <span class="badge text-bg-light border border-secondary-subtle me-2" >송장번호</span >
+									             <span>${item.id}</span>
+									         </div>`;
+							nodeInfo_detail.appendChild(itemDiv);
+						}
+						let pickUpBtn = document.createElement('button');
+						pickUpBtn.classList.add('btn', 'btn-primary', 'w-100', 'mb-2');
+						pickUpBtn.addEventListener('click', function () {
+							for (let item of duplicatItemList) {
+								console.log('deliverystate')
+								console.log(item);
+								deliverystate(item.id, pickUpBtn)
+							}
+						})
+						if (node.ostate == "Y") {
+							pickUpBtn.innerText = '배송중'
+							nodeInfo_detail.appendChild(pickUpBtn);
+						}
+						else if (node.ostate == "F") {
+							pickUpBtn.innerText = '배송완료'
+							nodeInfo_detail.appendChild(pickUpBtn);
+						}
+
+					}
+
+
+
+				}
+
+
+				//
+
+				//
+
+				list_group_item.appendChild(nodeInfo_detail);
+				nodeListDIV.appendChild(list_group_item);
+				drawMarker(node, bounds);
+
+			}
+
+			drawPath(totalPathPointList);
+
+			if (nodeList.length > 0) {
+				map.setBounds(bounds);
+			}
+
+		}
+
+		function secondsToHoursMinutes(seconds) {
+			// 시간으로 변환
+			const hours = Math.floor(seconds / 3600);
+			// 남은 분 계산
+			const minutes = Math.floor((seconds % 3600) / 60);
+
+			// 시간과 분을 "00" 형식으로 변환. 시간이 0일 경우, 시간 표시 생략
+			const formattedHours = hours > 0 ? `${hours.toString().padStart(2, '0')}시간 ` : '';
+			const formattedMinutes = minutes.toString().padStart(2, '0');
+
+			return `${formattedHours}${formattedMinutes}분`;
+		}
+
+		function drawMarker(node, bounds) {
+			const position = new kakao.maps.LatLng(node.y, node.x);
+			bounds.extend(position);
+			// 배열의 좌표들이 잘 보이게 마커를 지도에 추가합니다
+			const marker = new kakao.maps.Marker({position: position, clickable: true});
+			marker.setMap(map);
+
+			const name = node.name;
+			const phone = node.phone;
+
+			// 인포윈도우를 생성합니다
+			const infowindow = new kakao.maps.InfoWindow({
+				content: '<div style="padding:5px;">' + name + '<br/>' + phone + '</div>',
+				removable: true
+			});
+
+			MARKER_MAP[node.id] = marker;
+			INFO_MAP[node.id] = infowindow;
+
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function () {
+				infowindow.open(map, marker);
+			});
+		}
+
+		var POLYLINE = null;
+		function drawPath(pathPointList) {
+			if (pathPointList.length > 0) {
+				// 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
+				var linePath = [];
+				for (var point of pathPointList) {
+					linePath.push(new kakao.maps.LatLng(point.y, point.x));
+				}
+
+				// 지도에 표시할 선을 생성합니다
+				POLYLINE = new kakao.maps.Polyline({
+					path: linePath, // 선을 구성하는 좌표배열 입니다
+					strokeWeight: 5, // 선의 두께 입니다
+					strokeColor: 'red', // 선의 색깔입니다
+					strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+					strokeStyle: 'solid' // 선의 스타일입니다
+				});
+				// 지도에 선을 표시합니다 
+				POLYLINE.setMap(map);
+			}
+		}
+
+
+		function panTo(nodeId) {
+			clearInfoWindow();
+			const node = NODE_MAP[nodeId];
+			INFO_MAP[nodeId].open(map, MARKER_MAP[nodeId]);
+			// 이동할 위도 경도 위치를 생성합니다 
+			var moveLatLon = new kakao.maps.LatLng(node.y, node.x);
+
+			// 지도 중심을 부드럽게 이동시킵니다
+			// 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+			map.panTo(moveLatLon);
+		}
+		function clearInfoWindow() {
+			for (const nodeId in INFO_MAP) {
+				INFO_MAP[nodeId].close();
+			}
+		}
+		function clearNode() {
+			for (const nodeId in NODE_MAP) {
+				MARKER_MAP[nodeId].setMap(null);
+				MARKER_MAP[nodeId] = null;
+				INFO_MAP[nodeId].close();
+				INFO_MAP[nodeId] = null;
+				delete MARKER_MAP[nodeId];
+				delete INFO_MAP[nodeId];
+				delete NODE_MAP[nodeId];
+			}
+			if (POLYLINE) {
+				POLYLINE.setMap(null);
+				POLYLINE = null;
+			}
+		}
+
+		function deliverystate(res, clickBtn) {
+			$.ajax({
+				url: '/drivers/deliverystate',
+				type: 'get',
+				data: {'orderid': res},
+				success: function (res) {
+					console.log("g")
+					clickBtn.innerText = '배송완료';
+
+				}, error: function () {
+					alert('!!!!')
+				}
+
+
+
+			})
+
+
+		}
+		function pickupstate(res, clickBtn) {
+			$.ajax({
+				url: '/drivers/pickupstate',
+				type: 'get',
+				data: {'pid': res},
+
+				success: function (res) {
+					clickBtn.innerText = '픽업완료';
+
+				}
+
+
+
+			})
+
+
+		}
+		document.getElementById('chatIcon').addEventListener('click', function () {
+			var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasScrolling'));
+			offcanvas.show();
+		});
+	</script>
+	<!--  <script src="http://t1.daumcdn.net/mapjsapi/js/main/4.4.19/kakao.js" async></script>-->
+
+
+	<!-- JQUERY -->
+
+	<script>
+		let myId = '[[${session.loginDname}]]';
+	</script>
+	<script src="/js/chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+
+
+</head>
+
+<body>
+
+
+
+	<div th:fragment="head">
+
+
+
+
+
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<defs>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="link" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M12 19a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0-4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm-5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm7-12h-1V2a1 1 0 0 0-2 0v1H8V2a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9h16Zm0-11H4V6a1 1 0 0 1 1-1h1v1a1 1 0 0 0 2 0V5h8v1a1 1 0 0 0 2 0V5h1a1 1 0 0 1 1 1ZM7 15a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0 4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="category" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M19 5.5h-6.28l-.32-1a3 3 0 0 0-2.84-2H5a3 3 0 0 0-3 3v13a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-10a3 3 0 0 0-3-3Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h4.56a1 1 0 0 1 .95.68l.54 1.64a1 1 0 0 0 .95.68h7a1 1 0 0 1 1 1Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="heart" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
+					<path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="check" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="trash" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="star-outline" viewBox="0 0 15 15">
+					<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+						d="M7.5 9.804L5.337 11l.413-2.533L4 6.674l2.418-.37L7.5 4l1.082 2.304l2.418.37l-1.75 1.793L9.663 11L7.5 9.804Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="star-solid" viewBox="0 0 15 15">
+					<path fill="currentColor"
+						d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" />
+				</symbol>
+				<symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 15 15">
+					<path fill="currentColor"
+						d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
+				</symbol>
+			</defs>
+		</svg>
+
+		<div class="preloader-wrapper">
+			<div class="preloader">
+			</div>
+		</div>
+
+		<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart"
+			aria-labelledby="My Cart">
+			<div class="offcanvas-header justify-content-center">
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div class="order-md-last">
+					<h4 class="d-flex justify-content-between align-items-center mb-3">
+						<span class="text-primary">Your cart</span>
+						<span th:if="${session.bookMark != null}"
+							class="badge bg-primary rounded-pill">[[${session.bookMark.size}]]</span>
+					</h4>
+					<ul class="list-group mb-3">
+						<li th:each="bk:${session.bookMark}"
+							class="list-group-item d-flex justify-content-between lh-sm" th:if="${bk != null}">
+							<div>
+								<h6 class="my-0" th:text="${bk.product.product.productname}"
+									th:onclick="|location.href='@{/product/detail/{id}(id=${bk.product.id})}'|">Growers
+									cider</h6>
+								<div th:if="${#strings.length(bk.product.pcontents) > 6}"
+									th:onclick="|location.href='@{/product/detail/{id}(id=${bk.product.id})}'|">
+									<small class="text-body-secondary"
+										th:text="${#strings.substring(bk.product.pcontents,0,5)}+'.....'">Brief
+										description</small>
+								</div>
+								<div th:if="${#strings.length(bk.product.pcontents) < 7}"
+									th:onclick="|location.href='@{/product/detail/{id}(id=${bk.product.id})}'|">
+									<small class="text-body-secondary" th:text="${bk.product.pcontents}">Brief
+										description</small>
+								</div>
+
+							</div>
+							<span class="text-body-secondary cartProductPrice btn btn-warning me-2 mb-2"
+								th:onclick="removeWishList('[[${bk.id}]]');">삭제</span>
+
+						</li>
+
+					</ul>
+
+					<button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch"
+			aria-labelledby="Search">
+			<div class="offcanvas-header justify-content-center">
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div class="order-md-last">
+					<h4 class="d-flex justify-content-between align-items-center mb-3">
+						<span class="text-primary">Search</span>
+					</h4>
+					<form role="search" action="index.html" method="get" class="d-flex mt-3 gap-0">
+						<input class="form-control rounded-start rounded-0 bg-light" type="email"
+							placeholder="What are you looking for?" aria-label="What are you looking for?">
+						<button class="btn btn-dark rounded-end rounded-0" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<header>
+			<div class="container-fluid">
+				<div class="row py-3 border-bottom">
+
+					<div class="col-sm-4 col-lg-3 text-center text-sm-start">
+						<div class="main-logo">
+							<a href="/">
+								<img src="/images/logo.png" alt="logo" class="img-fluid">
+							</a>
+						</div>
+					</div>
+
+					<div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block" style="align-content: center">
+						<div class="search-bar row bg-light p-2 my-2 rounded-4">
+
+							<div class="col">
+								<form id="search-form" class="text-center" action="/product/search" method="post">
+									<input type="text" class="form-control border-0 bg-transparent"
+										placeholder="Search for more than 20,000 products" name="search" />
+								</form>
+							</div>
+							<div class="col-1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
+						<div class="support-box text-end d-none d-xl-block">
+							<span class="fs-6 text-muted">For Support?</span>
+							<h5 class="mb-0">010-3410-7285</h5>
+						</div>
+
+						<ul class="d-flex justify-content-end list-unstyled m-0">
+							<li th:if="${session.loginId == null}">
+								<a href="/login" class="rounded-circle bg-light p-2 mx-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+									  <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+									  <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/>
+									  
+									</svg>
+
+								</a>
+							</li>
+							<li th:if="${session.loginId != null}">
+								<a href="/members/logOut" class="rounded-circle bg-light p-2 mx-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+									  <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+									</svg>
+								</a>
+							</li>
+							<li th:if="${session.loginId != null}">
+								<a href="/members/mypage" class="rounded-circle bg-light p-2 mx-1">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="#user"></use>
+									</svg>
+								</a>
+							</li>
+							<li th:if="${session.loginId != null}">
+								<a href="/Qna/QnaList" class="rounded-circle bg-light p-2 mx-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+									  <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+									</svg>
+								</a>
+							</li>
+
+							<li class="dropdown" th:if="${session.loginId != null}">
+								<!-- nav-link  -->
+								<a class="text-white dropdown-toggle rounded-circle bg-light p-2 mx-1" href="#"
+									role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+									<img src="/images/alram.png" style="width: 24px; height: 24px;">
+								 
+								</a>
+
+								<ul class="dropdown-menu bg-light mx-3 p-4"
+									style="border-radius: 10px; min-width: 350px;">
+									<li class="dropdown-item text-center">
+										<img src="/images/logo.png" alt="logo" class="img-fluid" style="width: 50%;">
+									</li>
+									<li th:if="${session.product == null && session.srp == null}">
+										<div class="d-flex align-items-center border p-2 mb-2 bg-white rounded shadow-sm"
+											style="display: inline-block;">
+											<div class="flex-grow-1"
+												>
+												<strong>알림이 없습니다</strong>
+											</div>
+
+										</div>
+									</li>
+									<li th:if="${session.product != null}" th:each="product:${session.product}">
+										<div class="d-flex align-items-center border p-2 mb-2 bg-white rounded shadow-sm"
+											style="display: inline-block;">
+											<div class="flex-grow-1">
+												<strong>[[${product.productname}]] 상품 배달 완료</strong>
+											</div>
+											<button class="btn btn-primary ml-2"
+												th:onclick="deliverystate('[[${product.id}]]')">확인</button>
+										</div>
+									</li>
+									<li th:if="${session.srp != null}" th:each="srp:${session.srp}">
+										<div class="d-flex align-items-center border p-2 mb-2 bg-white rounded shadow-sm"
+											style="display: inline-block;">
+											<div class="flex-grow-1"
+												th:onclick="|location.href='@{/product/detail/{id}(id=${srp})}'|">
+												<strong>게시글에 답글이 달렸습니다.</strong>
+											</div>
+
+										</div>
+									</li>
+									<!--<li class="dropdown-item text-center">
+										<strong>공구마켓</strong>
+									</li>-->
+								</ul>
+
+
+
+						</ul>
+						</li>
+				
+
+
+
+						<li class="d-lg-none">
+							<a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas"
+								data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<use xlink:href="#cart"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="d-lg-none">
+							<a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas"
+								data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+								<svg width="24" height="24" viewBox="0 0 24 24">
+									<use xlink:href="#search"></use>
+								</svg>
+							</a>
+						</li>
+						</ul>
+
+						<div class="cart text-end d-none d-lg-block dropdown  position-relative" th:if="${session.loginId != null}">
+							<button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button"
+								data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+								aria-controls="offcanvasCart">
+								<span class="fs-6 text-muted dropdown-toggle"> <svg width="24" height="24"
+										viewBox="0 0 24 24">
+										<use xlink:href="#heart"> </use>
+									</svg></span>
+									<span  th:if="${session.bookMark != null}"class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									    [[${session.bookMark.size}]]
+									    <span class="visually-hidden">unread messages</span>
+									  </span>
+							
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</header>
+		<script src="/js/jquery-1.11.0.min.js"></script>
+		<script>
+			function removeWishList(bookMarkId) {
+				$.ajax({
+					url: '/BookMark/removeWish',
+					type: 'get',
+					data: {'bookMarkId': bookMarkId},
+					success: function (response) {
+						console.log(response);
+						location.reload();
+
+					}, error: function () {
+						alert('!!!!')
+					}
+
+
+
+				});
+			}
+
+			function deliverystate(orderId) {
+				$.ajax({
+					url: '/check',
+					type: 'get',
+					data: {'orderid': orderId},
+					success: function (response) {
+
+						location.reload();
+
+					}, error: function () {
+						alert('!!!!')
+					}
+
+
+
+				});
+
+
+			}
+		</script>
+
+
+	</div>
+
+
+</body>
+
+</html>

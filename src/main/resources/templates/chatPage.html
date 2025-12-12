@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>home</title>
+	<!-- BootStrap css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href="/css/chat.css" rel="stylesheet" >
+</head>
+
+<body>
+	<div class="container" style="max-width: 700px;">
+		
+		<hr>
+		<div class="content">
+			<h1 class="fw-bold"> 채팅</h1>
+
+			<!-- 접속자 목록 -->
+			<div class="border-bottom mb-3 p-2">
+				<div class="fw-bold">접속 중인 회원</div>
+				<div id="userList"></div>
+			</div>
+
+			<!-- 채팅 화면 -->
+			<div id="chatView" class="border border-secondary"></div>
+
+			<!-- 채팅 입력 -->
+			<div id="chatInput" class="row gx-1">
+				<div class="col-auto" id="sendTargetBox"></div>
+				<div class="col input-group">
+					<input class="form-control" onkeyup="sendChatMsg(event)" type="text" placeholder="메세지 입력...">
+					<input type="file" class="form-control d-none" name="sendImgFile" id="sendImgFile"
+						onchange="sendChatImg(this)">
+					<label class="input-group-text" for="sendImgFile">이미지</label>
+				</div>
+			</div>
+
+		</div>
+		<hr>
+		<div class="footer">
+			<div class="text-center p-3">Board</div>
+		</div>
+	</div>
+
+	<!-- BootStrap js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<script>
+		let myId = '[[${session.loginDid}]]';
+	</script>
+	<script src="/js/chat.js"></script>
+</body>
+
+
+
+
+</html>

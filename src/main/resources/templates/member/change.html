@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>홈</title>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes"> <!-- 이 태그만 남겨둡니다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="/css/headStyle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/vendor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .input-group {
+            margin-top: 20px;
+        }
+
+        .container {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #EE8035; /* 연한 주황색 */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #EE8035; /* 연한 주황색 호버 */
+        }
+
+        .custom-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .id-display {
+            display: flex;
+            align-items: center;
+        }
+
+        .id-label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* 클릭 시 배경색 변경 스타일 */
+        .highlight {
+            background-color: #d4edda; /* 연한 초록색 */
+        }
+
+        /* 입력 필드 및 선택 상자 스타일 */
+        .form-control, .form-select {
+            border: 2px solid rgba(0, 0, 0, 0.3); /* 연한 검정색 경계선 */
+            border-radius: 0 4px 4px 0; /* 오른쪽 모서리만 둥글게 */
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #333; /* 포커스 시 경계선 색상 */
+            box-shadow: none; /* 기본 박스 그림자 제거 */
+        }
+
+        /* input-group-text에 스타일 추가 */
+        .input-group-text {
+            border: 2px solid rgba(0, 0, 0, 0.3); /* 연한 검정색 경계선 */
+            border-radius: 4px 0 0 4px; /* 왼쪽 모서리만 둥글게 */
+            background-color: #f8f9fa; /* 배경색 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div th:replace="mhead :: head"></div>
+
+    <div class="container">
+        <div class="content">
+          <h2 class="mb-4 text-center">회원 정보 수정</h2>
+            <form method="POST" action="/members/change" id="editForm">
+				<input type="hidden" name="id" th:value="${member.id}">
+			
+                <div class="input-group mb-3">
+                    <span class="input-group-text">아이디</span>
+                    <input type="text" class="form-control" name="mid" required th:value="${member.mid}">
+                </div>
+				<!-- 아이디 중복 오류 메시지 -->
+							<div th:if="${error}" style="color: red;">
+							        <p th:text="${error}"></p>
+							    </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">비밀번호</span>
+                    <input type="password" class="form-control"  placeholder="새 비밀번호 (변경할 경우 입력)" name="mpw">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">회원 이름</span>
+                    <input type="text" class="form-control" name="mname" required th:value="${member.mname}">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">전화번호</span>
+                    <input type="text" class="form-control" name="mphone" th:value="${member.mphone}">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">이메일</span>
+					<input type="text" class="form-control" name="memail" required 
+					       th:value="${member.memail}">
+
+					<span class="input-group-text">@</span>
+					<select class="form-select" id="em3" name="emailDomain" required>
+					    <option value="">이메일주소 직접입력</option>
+					    <option value="naver.com">naver.com</option>
+					    <option value="nate.com">nate.com</option>
+					    <option value="gmail.com">gmail.com</option>
+					    <option value="yahoo.com">yahoo.com</option>
+					    <option value="hanmail.net">hanmail.net</option>
+					</select>
+                </div>
+
+                <!-- 주소 입력 -->
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">우편번호</span>
+                        <input type="text" name="postcode" class="form-control" id="sample4_postcode"
+                            placeholder="우편번호" th:value="${member.postcode}">
+                        <button type="button" id="searchPostcode" class="btn btn-secondary"
+                            onclick="sample4_execDaumPostcode()">우편번호 찾기</button>
+                    </div>
+                    <input type="text" name="roadAddress" class="form-control mb-3" id="sample4_roadAddress"
+                        th:value="${member.roadAddress}">
+                    <div class="mb-3" style="display: none;">
+                        <input type="text" name="jibunAddress" class="form-control" id="sample4_jibunAddress"
+                            th:value="${member.jibunAddress}">
+                    </div>
+                    <span id="guide" style="color:#999;display:none"></span>
+                    <input type="text" name="detailAddress" class="form-control mb-3" id="sample4_detailAddress"
+                        th:value="${member.detailAddress}">
+                </div>
+                <div class="mb-3" style="display: none;">
+                    <input type="text" name="extraAddress" class="form-control" id="sample4_extraAddress"
+                        th:value="${member.extraAddress}">
+                </div>
+
+                <div class="text-end mb-3">
+                    <button type="submit" class="btn btn-primary">정보 수정</button>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div th:replace="Footer::footer"></div>
+    
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/script.js"></script>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/js/daumPost.js"></script>
+
+    <script>
+        function highlight(input) {
+            // 클릭한 입력 필드에 highlight 클래스를 추가
+            input.classList.add('highlight');
+            // 다른 입력 필드의 highlight 클래스를 제거
+            const inputs = document.querySelectorAll('.form-control, .form-select');
+            inputs.forEach((el) => {
+                if (el !== input) {
+                    el.classList.remove('highlight');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
